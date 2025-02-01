@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/Home.css'
 
 
-// https://intermediate-catkin-college.glitch.me
 function Home(){
     const navigate = useNavigate();
     const [username, setUsername]=useState('')
@@ -29,7 +28,8 @@ function Home(){
             const token = data.token;
             if(token){
                 localStorage.setItem('token',token);
-                navigate('/quiz'){
+                navigate('/quiz')
+                {
                     else{
                         throw new Error('No token received from server.');
                     }
@@ -37,7 +37,8 @@ function Home(){
                     setError(err.message);
                     console.error("Login error:",err);
                 }
-            };
+            
+        };
   return (
     <div className="home-container">
         <div className='home-content'>
@@ -66,5 +67,4 @@ onChange={(e)=>
         
   );
 }
-
 export default Home;
