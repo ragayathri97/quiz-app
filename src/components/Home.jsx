@@ -22,25 +22,22 @@ function Home() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json(); // Get error details from server
-        throw new Error(errorData.message || 'Login failed'); // Throw error with message
+        const errorData = await response.json(); 
+        throw new Error(errorData.message || 'Login failed'); 
       }
 
-      // If successful, the server should return some data (e.g., a token)
       const data = await response.json();
 
-      // Assuming the server returns a token (adjust as needed)
-      const token = data.token;  // Adjust according to your server's response
-
+      const token = data.token;  
       if (token) {
-        localStorage.setItem('token', token); // Store the token (or however you want to persist login state)
-        navigate('/quiz-app'); // Redirect to quiz page
+        localStorage.setItem('token', token); 
+        navigate('/quiz-app'); 
       } else {
         throw new Error('No token received from server.');
       }
 
     } catch (err) {
-      setError(err.message); // Set error message in state
+      setError(err.message); 
       console.error("Login error:", err);
     }
   };
