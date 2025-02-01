@@ -4,21 +4,21 @@ import './Home.css';
 
 function Home() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState(''); // Add username state
-  const [password, setPassword] = useState(''); // Add password state
-  const [error, setError] = useState(''); // Add error state
+  const [username, setUsername] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const [error, setError] = useState(''); 
 
 
   const handleLogin = async () => {
-    setError(''); // Clear any previous errors
+    setError(''); 
 
     try {
-      const response = await fetch('/login', { // Use the provided /login endpoint
+      const response = await fetch('https://intermediate-catkin-college.glitch.me/login', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }), // Send username and password
+        body: JSON.stringify({ username, password }), 
       });
 
       if (!response.ok) {
