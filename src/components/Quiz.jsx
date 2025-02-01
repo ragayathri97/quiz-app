@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import QuizItem from './QuizItem';
+// import QuizItem from './QuizItem';
 import '../styles/Quiz.css'
+// import { BrowserRouter } from 'react-router-dom';
+
 function Quiz(){
     const navigate = useNavigate;
     const [questions, setQuestions] = useState([]);
